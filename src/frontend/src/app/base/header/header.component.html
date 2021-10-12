@@ -1,0 +1,39 @@
+<div class="header">
+    <div class="title" routerLink="/">
+        <div class="left">TexCards</div>
+        <div class="right">
+            
+        </div>
+    </div>
+    <div class="buttons">
+       <!-- Superuser -->
+        <ng-container *ngIf="user && !!user.isSuperUser">
+            <button mat-button [matMenuTriggerFor]="adminMenu">Adminbereich</button>
+            <mat-menu #adminMenu="matMenu" yPosition="above">
+                <button [routerLink]="routes.USERMANAGEMENT" mat-menu-item>Usermanagement</button>
+                <button [routerLink]="routes.SERVERMANAGEMENT" mat-menu-item>Servermanagement</button>
+            </mat-menu>
+        </ng-container>
+        <!-- Über uns -->
+        <button mat-button [matMenuTriggerFor]="aboveMenu">Über uns</button>
+        <mat-menu #aboveMenu="matMenu" yPosition="above">
+            <button mat-menu-item>Kontakt</button>
+            <button mat-menu-item>Impressum</button>
+        </mat-menu>
+        <!-- Login -->
+        <button mat-button [matMenuTriggerFor]="afterMenu">
+            <mat-icon [color]="!!user ? (user.isSuperUser ? 'accent' : 'primary') : 'default'">account_circle</mat-icon> {{ !!user ? user.username : '' }}
+        </button>
+        <mat-menu #afterMenu="matMenu" xPosition="after">
+            <igs-login></igs-login>
+        </mat-menu>
+    </div>
+</div>
+
+<div class="row">
+    <textarea name="" [options]="options" [(ngModel)]="tex" id="" cols="30" rows="10"></textarea>
+    <div>
+        <ng-katex-html *ngFor="let eq of list" [html]="eq"></ng-katex-html>
+
+    </div>
+</div>

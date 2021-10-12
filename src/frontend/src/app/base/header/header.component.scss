@@ -1,0 +1,78 @@
+.header {
+    height: 100px;
+    // background-color: #444;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        font-weight: 500;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:active {
+            border: none;
+            outline: none;
+            outline-style: none;
+            -moz-outline-style: none;
+        }
+
+        .left {
+            font-size: 3em;
+        }
+
+        .right {
+            font-size: 1.1em;
+            max-width: 400px;
+            margin-left: 1rem;
+        }
+    }
+}
+
+.row {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    textarea {
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 1rem;
+        margin-right: 4rem;
+        width: 400px;
+        height: 240px;
+    }
+    div {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 1rem;
+        margin-right: 4rem;
+        width: 400px;
+        height: 240px;
+    }
+}
+
+.accountName {
+    opacity: 0.8;
+    color: #333;
+    margin-left: 4px;
+}
+
+.routerLinkActiveClass {
+    text-underline-position: below;
+    text-underline-offset: 10px;
+    text-decoration: underline;
+    text-decoration-color: black;
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+}
